@@ -36,7 +36,7 @@ export default function Event() {
     return (
         <div ref={eventcontainer} className="relative h-screen w-full bg-gradient-to-bl from-[#FE603D] to-[#FEBF59]">
             <div className="absolute w-1/2 -top-40 -right-0 h-full">
-                <Image ref={logo} className="absolute -top-40 -right-0" src="/3d/bintang3.png" width={900} height={900} />
+                <Image ref={logo} className="absolute -top-40 -right-0" src="/3d/bintang3.png" width={500} height={500} />
             </div>
         </div>
     );
