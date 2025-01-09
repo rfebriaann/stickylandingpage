@@ -9,12 +9,26 @@ export default function Jumbotorn() {
     const content = useRef(null);
     const flowimage = useRef(null);
     const bintang = useRef(null);
+    const logo = useRef(null);
 
     useEffect(()=>{
+        gsap.set(logo.current, {
+            y: -240,
+        });
+        gsap.to(logo.current, {
+            scrollTrigger: {
+                trigger: logo.current,
+                start: "250px center",
+                end: "bottom 300px",
+                scrub: 1,
+            },
+            y: 130,
+        });
+
         gsap.to(bintang.current, {
             transformOrigin: "center",
             rotation: "360",
-            duration: 3,
+            duration: 2,
             repeat: -1, // Ulang terus menerus
             ease: "linear",
         });
@@ -117,7 +131,14 @@ export default function Jumbotorn() {
                     </div>
                 </div>
             </section>
-            <section ref={content} className="h-screen w-full bg-gradient-to-br from-[#FEBF59] to-[#FE603D]"></section>
+            <section ref={content} className="relative h-screen w-full bg-gradient-to-br from-[#FEBF59] to-[#FE603D]">
+                <div className="absolute w-1/2 left-0 h-full">
+                    <Image ref={logo} className="absolute -left-40" src="/3d/logo.png" width={1200} height={1200} />
+                </div>
+                {/* <div className="absolute w-1/2 -bottom-40 right-0 h-full">
+                    <Image ref={logo} className="absolute -bottom-60 -right-0" src="/3d/bintang3.png" width={1200} height={1200} />
+                </div> */}
+            </section>
         </div>
     );
 }
